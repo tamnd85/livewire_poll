@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Poll;
 use Livewire\Component;
+use Livewire\Livewire;
 
 class Createpoll extends Component
 {
@@ -53,6 +54,9 @@ class Createpoll extends Component
                 ->all()
         );
         $this->reset(['title', 'options']);
+
+        $this->dispatch('pollCreated');
+
     }
 
 }
